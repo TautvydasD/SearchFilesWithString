@@ -19,7 +19,6 @@ void printList()
     }
 }
 
-
 void push(char * x)
 {
     struct Node *t, *temp;
@@ -43,18 +42,6 @@ void push(char * x)
     temp->next = t;
     t->next   = NULL;
 }
-//delete first item
-// struct Node* deleteFirst()
-// {
-//     //save reference to first link
-//     struct Node *tempLink = head;
-
-//     //mark next to first link as first 
-//     head = head->next;
-
-//     //return the deleted link
-//     return tempLink;
-// }
 
 //is list empty
 bool isEmpty()

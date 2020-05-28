@@ -17,10 +17,9 @@ int count;
 
 extern void printList();
 
-void push(char *x);
+extern void push(char *x);
 
-// struct node* deleteFirst();
-bool isEmpty();
-int length();
+extern bool isEmpty();
+extern int length();
 
 #endif
