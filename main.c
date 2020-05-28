@@ -1,18 +1,11 @@
 /**
- *  
  * (C) 2020 Tautvydas Diksas
- *
  */
-#include <stdio.h> // fopen, fgets, fclose
-#include <stdlib.h> // abort, 
-#include <string.h> // strcmp
-#include <dirent.h> // opendir readdir closedir
-#include <sys/types.h> // opendir closedir
-// #include <unistd.h>
-// #include <errno.h>
-// #include <ftw.h>
-// #include <time.h>
-// #include <libgen.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <dirent.h>
+#include <sys/types.h>
 
 #include "lib/dynlib.h"
 
@@ -80,18 +73,23 @@ int searchSubString(char *fname, char *str)
     // {
     //     push(fname);
     // }
-    // else
-    // {
-    //     printf("Didnt find anything within given file.\n\n");
-    // }
+    if(find_result == 0)
+    {
+        printf("Didnt find anything within given file.\n\n");
+    }
     
     
     fclose(fp);
     return 0;    
 }
 
-/**
- * 
+/** Method which reads every file in directory.
+ * Starts by trying to open the given folder.
+ * If the folder does not open, the method shutsdown.
+ * After opening the folder, every entry is being read
+ * until there are none left. The method skips folders like
+ * "." and "..". If an entry is a directory, the method goes into
+ * the folder. If the entry is a file, it searches for given string.
  */
 int walkDir(const char * fname, char * text)
 {
@@ -130,10 +128,19 @@ int walkDir(const char * fname, char * text)
     return 0;
 }
 
+
+/** Project starting method.
+ * Invokes methods needed to complete the task
+ * 
+ */
 int main(int argc, char * argv[]) 
 {
     hasArguments(argc, argv);
     walkDir(argv[2], argv[4]);
+    
+    push("One");
+    push("Two");
+    push("Three");
     printList();
 
     return 0;

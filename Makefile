@@ -16,8 +16,8 @@ clean: ; rm -f test ex1 *.out *.o
 dynamic: ; $(CC) -Wall -pedantic -shared -fpic -o ./lib/dynlib.so ./lib/dynlib.c
 
 # Does not seem to find the library
-rundyn: clean; export; dynamic; $(CC) -g -Wall -Werror -pedantic -o main.o main.c -Llib -ldyn
+rundyn: clean ; $(CC) $(CFLAGS) $(PROJECT) -Llib -ldyn
+
+exporting: ; LD_LIBRARY_PATH=${PWD}/lib ;
 
 # dynamic: ; $(CC) -fPIC -c ./lib/*.c & mv dynlib.o ./lib ; $(CC) -shared -Wl,-soname,./lib/dynlib.so -o ./lib/dynlib.so ./lib/*.o
-
-exporting: LD_LIBRARY_PATH=${PWD}/lib

@@ -8,8 +8,7 @@
 * Kiekvienas failas savyje turi tekstą.
 * Programos tikslas yra atrasti failus, kuriuose yra tam tikras paduotas tekstas.
   1. Programa turi būti paleidžiama taip ./programa -f [APLANKALAS] -t [tekstas]
-  2. programa turi atspausdinti visus failus, kuriuose yra pasirinktas tekstas, bei atspausdinti
-kurioje failo eilutėje yra pasirinktas tekstas
+  2. programa turi atspausdinti visus failus, kuriuose yra pasirinktas tekstas, bei atspausdinti kurioje failo eilutėje yra pasirinktas tekstas
 
 Paruošti dynamic library (.so), kuriame būtų įgyvendintas Linked List principu veikiantis sąrašas.
 

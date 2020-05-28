@@ -8,6 +8,8 @@ struct Node *current = NULL;
 
 int count = 0;
 
+/** Prints lists all values
+ */
 void printList() 
 {
     struct Node *ptr = head;
@@ -19,6 +21,8 @@ void printList()
     }
 }
 
+/** Adds new value to list
+ */
 void push(char * x)
 {
     struct Node *t, *temp;
@@ -43,12 +47,15 @@ void push(char * x)
     t->next   = NULL;
 }
 
-//is list empty
+/** Check if list has any values
+ */
 bool isEmpty()
 {
     return head == NULL;
 }
 
+/** Counts how many values list has 
+ */
 int length()
 {
     int length = 0;
