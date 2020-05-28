@@ -1,23 +1,15 @@
 CC=gcc
 CFLAGS=-Wall -Werror -pedantic -g -o
-LD_LIBRARY_PATH=${PWD}/lib
+LD_LIBRARY=$(shell pwd)
 PROJECT=main.o main.c
-EX=test.o test.c 
 
+all: libdyn.so prog
 
-#this is the most used command
-run: clean; $(CC) $(CFLAGS) main.o main.c lib/dynlib.c ; ./main.o -f . -t printf
+prog: main.c
+	$(CC) -o prog main.c -L$(LD_LIBRARY) -ldyn -Wl,-rpath=$(LD_LIBRARY)
 
+libdyn.so: ./lib/dynlib.c ./lib/dynlib.h
+	$(CC) -Wall -shared -fPIC -o libdyn.so ./lib/dynlib.c
 
-all: clean; $(CC) $(CFLAGS) $(EX); $(CC) $(CFLAGS) $(PROJECT)
-
-clean: ; rm -f test ex1 *.out *.o
-
-dynamic: ; $(CC) -Wall -pedantic -shared -fpic -o ./lib/dynlib.so ./lib/dynlib.c
-
-# Does not seem to find the library
-rundyn: clean ; $(CC) $(CFLAGS) $(PROJECT) -Llib -ldyn
-
-exporting: ; LD_LIBRARY_PATH=${PWD}/lib ;
-
-# dynamic: ; $(CC) -fPIC -c ./lib/*.c & mv dynlib.o ./lib ; $(CC) -shared -Wl,-soname,./lib/dynlib.so -o ./lib/dynlib.so ./lib/*.o
+clean:
+	rm -f libdyn.so prog
