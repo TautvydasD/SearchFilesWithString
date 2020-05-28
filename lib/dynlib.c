@@ -13,7 +13,7 @@ int count = 0;
 void printList() 
 {
     struct Node *ptr = head;
-
+    printf("Print list content:\n");
     while(ptr != NULL) 
     {
         printf("%s\n",ptr->data);
