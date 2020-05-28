@@ -1,1 +1,3 @@
 # TeltonikaTask
+
+> make
