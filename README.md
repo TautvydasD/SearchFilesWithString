@@ -1,6 +1,9 @@
 # TeltonikaTask
 To test this project run command:
-> make # compiles the main.c with dynlib.c and then runs ./main.o -f . -t printf
+
+```console
+make # compiles the main.c with dynlib.c and then runs ./main.o -f . -t printf
+```
 
 To test the project with diffrent variables, do the following:
 

@@ -71,6 +71,8 @@ int searchSubString(char *fname, char *str)
     // pushname does not work :/
     // if (find_result > 0)
     // {
+    //     snprintf(temp, sizeof(temp), "%s%c", temp, '\0');
+    //     // strcat(temp, '\0');
     //     push(fname);
     // }
     if(find_result == 0)
@@ -112,7 +114,7 @@ int walkDir(const char * fname, char * text)
 
         if (strcmp(entry->d_name, ".git") == 0)
             continue;
-            
+
         if (entry->d_type == DT_DIR)
         {
             walkDir(path, text);
