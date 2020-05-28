@@ -110,6 +110,9 @@ int walkDir(const char * fname, char * text)
         if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
             continue;
 
+        if (strcmp(entry->d_name, ".git") == 0)
+            continue;
+            
         if (entry->d_type == DT_DIR)
         {
             walkDir(path, text);
