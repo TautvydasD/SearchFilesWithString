@@ -12,13 +12,3 @@ make
 
 ./main.o -f folder -t text
 ```
-
-Other commands:
-
-```console
-make dynamic # to make dynamic library (*.so)
-
-make rundyn # try to run dynamic library (Is broken because ldd is not found).
-
-make exporting # exports library path
-```
