@@ -1,4 +1,4 @@
-# Search Files With String
+# Search files for string task
 To test this project run command:
 
 ```console
